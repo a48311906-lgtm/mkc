@@ -1,54 +1,121 @@
+:root {
+    --primary-pink: #f8bbd0;
+    --dark-pink: #f06292;
+    --bg-color: #fce4ec;
+}
+
 body {
-    background-color: #fce4ec; /* Soft pink */
-    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    font-family: 'Segoe UI', Roboto, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    overflow: hidden;
 }
 
-.container {
-    transition: all 0.5s ease;
-}
+.container { transition: all 0.5s ease; }
+.hidden { display: none !important; }
 
-.hidden {
-    display: none !important;
-}
-
+/* The Card */
 .card {
     background: white;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 15px 35px rgba(240, 98, 146, 0.2);
     text-align: center;
-    width: 300px;
+    width: 320px;
 }
 
+/* Keypad Styles */
 .keypad {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin-top: 15px;
+    gap: 12px;
+    margin-top: 20px;
 }
 
 .keypad button {
-    padding: 15px;
+    height: 50px;
+    width: 50px;
+    margin: auto;
     border: none;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+    font-size: 1.1rem;
+    color: #555;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.keypad button:active { background: var(--primary-pink); color: white; }
+
+.dot {
+    height: 12px;
+    width: 12px;
+    background: #eee;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+}
+.dot.active { background: var(--dark-pink); }
+
+/* Navigation Buttons */
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.nav-buttons button {
+    background: none;
+    border: 1px solid var(--primary-pink);
     border-radius: 10px;
-    background: #f8bbd0;
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: var(--dark-pink);
+}
+
+.nav-buttons button:hover { background: var(--primary-pink); color: white; }
+
+/* Letter and Message Content */
+.letter-style {
+    text-align: left;
+    background: #fffafa;
+    padding: 15px;
+    border-left: 4px solid var(--primary-pink);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #444;
+}
+
+.circle-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-pink);
+}
+
+.collect-btn {
+    background: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-top: 10px;
     cursor: pointer;
 }
 
-.dot {
-    height: 10px;
-    width: 10px;
-    background-color: #ddd;
-    border-radius: 50%;
-    display: inline-block;
-    margin: 5px;
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.5s forwards;
 }
 
-.dot.active {
-    background-color: #e91e63;
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
