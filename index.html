@@ -3,50 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual Birthday Gift</title>
+    <title>For My Favorite Person ❤️</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <audio id="bg-music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
     <div id="login-screen" class="container">
         <div class="card">
             <div class="profile-pic-container">
-                <img src="https://via.placeholder.com/100" alt="Profile">
+                <img src="profile.jpg" alt="Us" class="login-img">
             </div>
-            <div class="keypad-container">
-                <p id="status-text">Enter Passcode</p>
-                <div class="passcode-dots">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
-                <div class="keypad">
-                    <button onclick="pressKey(1)">1</button>
-                    <button onclick="pressKey(2)">2</button>
-                    <button onclick="pressKey(3)">3</button>
-                    <button onclick="pressKey(4)">4</button>
-                    <button onclick="pressKey(5)">5</button>
-                    <button onclick="pressKey(6)">6</button>
-                    <button onclick="pressKey(7)">7</button>
-                    <button onclick="pressKey(8)">8</button>
-                    <button onclick="pressKey(9)">9</button>
-                    <button onclick="pressKey(0)">0</button>
-                </div>
+            <p id="status-text">Enter Passcode</p>
+            <div class="passcode-dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <div class="keypad">
+                <button onclick="pressKey(1)">1</button>
+                <button onclick="pressKey(2)">2</button>
+                <button onclick="pressKey(3)">3</button>
+                <button onclick="pressKey(4)">4</button>
+                <button onclick="pressKey(5)">5</button>
+                <button onclick="pressKey(6)">6</button>
+                <button onclick="pressKey(7)">7</button>
+                <button onclick="pressKey(8)">8</button>
+                <button onclick="pressKey(9)">9</button>
+                <button onclick="pressKey(0)">0</button>
             </div>
         </div>
     </div>
 
     <div id="gift-content" class="container hidden">
         <div class="card gift-card">
-            <h2>Happy Birthday!</h2>
             <div class="nav-buttons">
-                <button onclick="showSection('profile')">Profile</button>
-                <button onclick="showSection('gallery')">Gallery</button>
-                <button onclick="showSection('message')">Read Me</button>
+                <button onclick="showSection('profile')">👤 Profile</button>
+                <button onclick="showSection('gallery')">🖼️ Gallery</button>
+                <button onclick="showSection('message')">💌 Read Me</button>
             </div>
 
-            <div id="section-display" class="content-area">
-                <p>Click a button above to start!</p>
+            <div id="section-display" class="content-area fade-in">
+                <h3>Welcome Home ❤️</h3>
+                <p>Click a tab above to see your surprise.</p>
             </div>
         </div>
     </div>
