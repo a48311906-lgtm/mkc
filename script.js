@@ -1,5 +1,5 @@
 let enteredCode = "";
-const correctCode = "1234"; // CHANGE YOUR PASSCODE HERE
+const correctCode = "1509"; // CHANGE YOUR PASSCODE HERE
 
 function pressKey(num) {
     if (enteredCode.length < 4) {
