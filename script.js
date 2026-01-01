@@ -48,7 +48,7 @@ function showSection(section) {
             <div class="fade-in">
                 <img src="profile.jpg" class="circle-img">
                 <h3>My Love</h3>
-                <p>"Miles can't keep us apart because you're always in my heart."</p>
+                <p>"Happpy new year love, this is starting with you is the best thing happen in thst year. Miles can't keep us apart because you're always in my heart."</p>
                 <p><b>Next Meeting:</b> Soon™ ✈️</p>
             </div>
         `;
