@@ -65,7 +65,7 @@ function showSection(section) {
         content = `
             <div class="fade-in letter-box">
                 <p>Dear You,</p>
-                <p>I know the distance is hard, but you are the best thing that ever happened to me. Thank you for every late-night call and for being my favorite person on this earth.</p>
+                <p>I know the distance is hard, but you are the best thing that ever happened to me. Thank you for every late-night waiting for me and for being my favorite person on this earth. i dont know what future we hold but i love youuu my angle little DIA</p>
                 <p>I love you more than every mile between us. ❤️</p>
             </div>
         `;
