@@ -1,5 +1,5 @@
 let enteredCode = "";
-const correctCode = "1234"; // Set your custom 4-digit passcode here
+const correctCode = "1234"; // CHANGE YOUR PASSCODE HERE
 
 function pressKey(num) {
     if (enteredCode.length < 4) {
@@ -9,13 +9,18 @@ function pressKey(num) {
 
     if (enteredCode.length === 4) {
         if (enteredCode === correctCode) {
+            // Play Music
+            const music = document.getElementById('bg-music');
+            music.play();
+
             document.getElementById('status-text').innerText = "Access Granted ❤️";
+            
             setTimeout(() => {
                 document.getElementById('login-screen').classList.add('hidden');
                 document.getElementById('gift-content').classList.remove('hidden');
             }, 600);
         } else {
-            document.getElementById('status-text').innerText = "Wrong Passcode!";
+            document.getElementById('status-text').innerText = "Try Again!";
             enteredCode = ""; 
             setTimeout(() => {
                 document.getElementById('status-text').innerText = "Enter Passcode";
@@ -34,42 +39,37 @@ function updateDots() {
 
 function showSection(section) {
     const display = document.getElementById('section-display');
-    display.classList.remove('fade-in');
+    display.innerHTML = ""; // Clear current
     
-    // Brief timeout to re-trigger animation
-    setTimeout(() => {
-        if (section === 'profile') {
-            display.innerHTML = `
-                <div class="content-card">
-                    <img src="your-photo.jpg" class="circle-img">
-                    <h3>My Favorite View</h3>
-                    <p>"Distance is just a test to see how far love can travel."</p>
-                    <p style="font-size: 0.8rem; color: #888;">Counting every second until we're in the same timezone.</p>
-                </div>
-            `;
-        } 
-        else if (section === 'gallery') {
-            display.innerHTML = `
-                <div class="content-card">
-                    <h3>Our Memories</h3>
-                    <div class="photo-placeholder">
-                        <img src="memory1.jpg" style="width:100%; border-radius:10px; margin-bottom:10px;">
-                    </div>
-                    <p>I miss your smile more than words can say.</p>
-                    <button class="collect-btn" onclick="this.innerText='Virtual Hug Sent! 🫂'">Collect Hug</button>
-                </div>
-            `;
-        } 
-        else if (section === 'message') {
-            display.innerHTML = `
-                <div class="letter-style">
-                    <h3>To My Love,</h3>
-                    <p>I hate that there are so many miles between us right now, but I love that we are strong enough to handle it. Every flight, every video call, and every "I miss you" text brings us one step closer to the day we never have to say goodbye again.</p>
-                    <p>Thank you for being my person, even from across the map. I'm always holding your hand in my heart.</p>
-                    <p><b>Always Yours.</b></p>
-                </div>
-            `;
-        }
-        display.classList.add('fade-in');
-    }, 50);
+    let content = "";
+
+    if (section === 'profile') {
+        content = `
+            <div class="fade-in">
+                <img src="profile.jpg" class="circle-img">
+                <h3>My Love</h3>
+                <p>"Miles can't keep us apart because you're always in my heart."</p>
+                <p><b>Next Meeting:</b> Soon™ ✈️</p>
+            </div>
+        `;
+    } else if (section === 'gallery') {
+        content = `
+            <div class="fade-in">
+                <h3>Favorite Moments</h3>
+                <img src="memory.jpg" style="width:100%; border-radius:15px;">
+                <p>Missing this day with you!</p>
+                <button class="collect-btn" onclick="alert('Hug Collected! 🤗')">Collect Hug</button>
+            </div>
+        `;
+    } else if (section === 'message') {
+        content = `
+            <div class="fade-in letter-box">
+                <p>Dear You,</p>
+                <p>I know the distance is hard, but you are the best thing that ever happened to me. Thank you for every late-night call and for being my favorite person on this earth.</p>
+                <p>I love you more than every mile between us. ❤️</p>
+            </div>
+        `;
+    }
+
+    display.innerHTML = content;
 }
